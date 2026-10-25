@@ -2,6 +2,6 @@ numpy
 scipy
 matplotlib
 pandas
+numba
 streamlit
 tvb-data
-tvb-library
