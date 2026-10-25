@@ -1,0 +1,7 @@
+numpy
+scipy
+matplotlib
+pandas
+streamlit
+tvb-data
+tvb-library
