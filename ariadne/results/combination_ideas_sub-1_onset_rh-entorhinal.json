@@ -1,0 +1,363 @@
+{
+ "brain": "ideas_sub-1_onset_rh-entorhinal",
+ "onset_index": 52,
+ "boundary_x0_reduction": 0.004954828715133325,
+ "boundary_estimates": {
+  "carbamazepine": 0.004938338452560859,
+  "cenobamate": 0.004766244744583602,
+  "phenytoin": 0.005025491162085075,
+  "lacosamide": 0.00497131897770579
+ },
+ "boundary_spread_fraction": 0.052321973655651985,
+ "pk_source": "FDA LAMICTAL label (2025), Table 13",
+ "pk_multipliers": {
+  "lamotrigine|valproate": 2.0,
+  "lamotrigine|carbamazepine": 0.6,
+  "lamotrigine|phenytoin": 0.6
+ },
+ "combination_model": "Bliss independence on shared targets; additive across model terms; cooperativity applied once to combined calcium block",
+ "pairs": [
+  {
+   "pair": "lamotrigine + cenobamate",
+   "a": "lamotrigine",
+   "b": "cenobamate",
+   "x0_effect": 3.189,
+   "coupling_effect": 0.3,
+   "contained_at_standard": true,
+   "dose_multiple_needed": 0.388,
+   "best_monotherapy": 0.469,
+   "pk_applied": null,
+   "assumed_other_x0": null
+  },
+  {
+   "pair": "valproate + cenobamate",
+   "a": "valproate",
+   "b": "cenobamate",
+   "x0_effect": 2.9751,
+   "coupling_effect": 0.2,
+   "contained_at_standard": true,
+   "dose_multiple_needed": 0.416,
+   "best_monotherapy": 0.469,
+   "pk_applied": null,
+   "assumed_other_x0": 0.4
+  },
+  {
+   "pair": "carbamazepine + cenobamate",
+   "a": "carbamazepine",
+   "b": "cenobamate",
+   "x0_effect": 2.9086,
+   "coupling_effect": 0.0,
+   "contained_at_standard": true,
+   "dose_multiple_needed": 0.426,
+   "best_monotherapy": 0.469,
+   "pk_applied": null,
+   "assumed_other_x0": null
+  },
+  {
+   "pair": "cenobamate + lacosamide",
+   "a": "cenobamate",
+   "b": "lacosamide",
+   "x0_effect": 2.906,
+   "coupling_effect": 0.0,
+   "contained_at_standard": true,
+   "dose_multiple_needed": 0.426,
+   "best_monotherapy": 0.469,
+   "pk_applied": null,
+   "assumed_other_x0": null
+  },
+  {
+   "pair": "cenobamate + phenytoin",
+   "a": "cenobamate",
+   "b": "phenytoin",
+   "x0_effect": 2.7948,
+   "coupling_effect": 0.0,
+   "contained_at_standard": true,
+   "dose_multiple_needed": 0.443,
+   "best_monotherapy": 0.469,
+   "pk_applied": null,
+   "assumed_other_x0": null
+  },
+  {
+   "pair": "pregabalin + cenobamate",
+   "a": "pregabalin",
+   "b": "cenobamate",
+   "x0_effect": 2.5406,
+   "coupling_effect": 0.6,
+   "contained_at_standard": true,
+   "dose_multiple_needed": 0.488,
+   "best_monotherapy": 0.469,
+   "pk_applied": null,
+   "assumed_other_x0": null
+  },
+  {
+   "pair": "cenobamate + levetiracetam",
+   "a": "cenobamate",
+   "b": "levetiracetam",
+   "x0_effect": 2.5406,
+   "coupling_effect": 0.4031,
+   "contained_at_standard": true,
+   "dose_multiple_needed": 0.488,
+   "best_monotherapy": 0.469,
+   "pk_applied": null,
+   "assumed_other_x0": null
+  },
+  {
+   "pair": "lamotrigine + valproate",
+   "a": "lamotrigine",
+   "b": "valproate",
+   "x0_effect": 1.8956,
+   "coupling_effect": 0.5692,
+   "contained_at_standard": true,
+   "dose_multiple_needed": 0.653,
+   "best_monotherapy": 1.188,
+   "pk_applied": [
+    "lamotrigine x2.0"
+   ],
+   "assumed_other_x0": 0.4
+  },
+  {
+   "pair": "lamotrigine + lacosamide",
+   "a": "lamotrigine",
+   "b": "lacosamide",
+   "x0_effect": 1.3215,
+   "coupling_effect": 0.3,
+   "contained_at_standard": true,
+   "dose_multiple_needed": 0.937,
+   "best_monotherapy": 1.188,
+   "pk_applied": null,
+   "assumed_other_x0": null
+  },
+  {
+   "pair": "carbamazepine + lamotrigine",
+   "a": "carbamazepine",
+   "b": "lamotrigine",
+   "x0_effect": 1.0685,
+   "coupling_effect": 0.2045,
+   "contained_at_standard": false,
+   "dose_multiple_needed": 1.159,
+   "best_monotherapy": 1.188,
+   "pk_applied": [
+    "lamotrigine x0.6"
+   ],
+   "assumed_other_x0": null
+  },
+  {
+   "pair": "carbamazepine + lacosamide",
+   "a": "carbamazepine",
+   "b": "lacosamide",
+   "x0_effect": 0.9793,
+   "coupling_effect": 0.0,
+   "contained_at_standard": false,
+   "dose_multiple_needed": 1.265,
+   "best_monotherapy": 2.312,
+   "pk_applied": null,
+   "assumed_other_x0": null
+  },
+  {
+   "pair": "carbamazepine + valproate",
+   "a": "carbamazepine",
+   "b": "valproate",
+   "x0_effect": 0.976,
+   "coupling_effect": 0.2,
+   "contained_at_standard": false,
+   "dose_multiple_needed": 1.269,
+   "best_monotherapy": 2.188,
+   "pk_applied": null,
+   "assumed_other_x0": 0.4
+  },
+  {
+   "pair": "valproate + lacosamide",
+   "a": "valproate",
+   "b": "lacosamide",
+   "x0_effect": 0.9723,
+   "coupling_effect": 0.2,
+   "contained_at_standard": false,
+   "dose_multiple_needed": 1.274,
+   "best_monotherapy": 2.188,
+   "pk_applied": null,
+   "assumed_other_x0": 0.4
+  },
+  {
+   "pair": "lamotrigine + pregabalin",
+   "a": "lamotrigine",
+   "b": "pregabalin",
+   "x0_effect": 0.941,
+   "coupling_effect": 0.72,
+   "contained_at_standard": false,
+   "dose_multiple_needed": 1.316,
+   "best_monotherapy": 1.188,
+   "pk_applied": null,
+   "assumed_other_x0": null
+  },
+  {
+   "pair": "lamotrigine + levetiracetam",
+   "a": "lamotrigine",
+   "b": "levetiracetam",
+   "x0_effect": 0.941,
+   "coupling_effect": 0.5822,
+   "contained_at_standard": false,
+   "dose_multiple_needed": 1.316,
+   "best_monotherapy": 1.188,
+   "pk_applied": null,
+   "assumed_other_x0": null
+  },
+  {
+   "pair": "lamotrigine + phenytoin",
+   "a": "lamotrigine",
+   "b": "phenytoin",
+   "x0_effect": 0.9349,
+   "coupling_effect": 0.2045,
+   "contained_at_standard": false,
+   "dose_multiple_needed": 1.325,
+   "best_monotherapy": 1.188,
+   "pk_applied": [
+    "lamotrigine x0.6"
+   ],
+   "assumed_other_x0": null
+  },
+  {
+   "pair": "carbamazepine + phenytoin",
+   "a": "carbamazepine",
+   "b": "phenytoin",
+   "x0_effect": 0.8438,
+   "coupling_effect": 0.0,
+   "contained_at_standard": false,
+   "dose_multiple_needed": 1.468,
+   "best_monotherapy": 2.312,
+   "pk_applied": null,
+   "assumed_other_x0": null
+  },
+  {
+   "pair": "phenytoin + lacosamide",
+   "a": "phenytoin",
+   "b": "lacosamide",
+   "x0_effect": 0.8404,
+   "coupling_effect": 0.0,
+   "contained_at_standard": false,
+   "dose_multiple_needed": 1.474,
+   "best_monotherapy": 2.344,
+   "pk_applied": null,
+   "assumed_other_x0": null
+  },
+  {
+   "pair": "valproate + phenytoin",
+   "a": "valproate",
+   "b": "phenytoin",
+   "x0_effect": 0.8133,
+   "coupling_effect": 0.2,
+   "contained_at_standard": false,
+   "dose_multiple_needed": 1.523,
+   "best_monotherapy": 2.188,
+   "pk_applied": null,
+   "assumed_other_x0": 0.4
+  },
+  {
+   "pair": "carbamazepine + pregabalin",
+   "a": "carbamazepine",
+   "b": "pregabalin",
+   "x0_effect": 0.534,
+   "coupling_effect": 0.6,
+   "contained_at_standard": false,
+   "dose_multiple_needed": 2.32,
+   "best_monotherapy": 2.312,
+   "pk_applied": null,
+   "assumed_other_x0": null
+  },
+  {
+   "pair": "carbamazepine + levetiracetam",
+   "a": "carbamazepine",
+   "b": "levetiracetam",
+   "x0_effect": 0.534,
+   "coupling_effect": 0.4031,
+   "contained_at_standard": false,
+   "dose_multiple_needed": 2.32,
+   "best_monotherapy": 2.312,
+   "pk_applied": null,
+   "assumed_other_x0": null
+  },
+  {
+   "pair": "pregabalin + lacosamide",
+   "a": "pregabalin",
+   "b": "lacosamide",
+   "x0_effect": 0.5302,
+   "coupling_effect": 0.6,
+   "contained_at_standard": false,
+   "dose_multiple_needed": 2.336,
+   "best_monotherapy": 2.344,
+   "pk_applied": null,
+   "assumed_other_x0": null
+  },
+  {
+   "pair": "levetiracetam + lacosamide",
+   "a": "levetiracetam",
+   "b": "lacosamide",
+   "x0_effect": 0.5302,
+   "coupling_effect": 0.4031,
+   "contained_at_standard": false,
+   "dose_multiple_needed": 2.336,
+   "best_monotherapy": 2.344,
+   "pk_applied": null,
+   "assumed_other_x0": null
+  },
+  {
+   "pair": "valproate + pregabalin",
+   "a": "valproate",
+   "b": "pregabalin",
+   "x0_effect": 0.45,
+   "coupling_effect": 0.68,
+   "contained_at_standard": false,
+   "dose_multiple_needed": 2.753,
+   "best_monotherapy": 2.188,
+   "pk_applied": null,
+   "assumed_other_x0": 0.4
+  },
+  {
+   "pair": "valproate + levetiracetam",
+   "a": "valproate",
+   "b": "levetiracetam",
+   "x0_effect": 0.45,
+   "coupling_effect": 0.5225,
+   "contained_at_standard": false,
+   "dose_multiple_needed": 2.753,
+   "best_monotherapy": 2.188,
+   "pk_applied": null,
+   "assumed_other_x0": 0.4
+  },
+  {
+   "pair": "pregabalin + phenytoin",
+   "a": "pregabalin",
+   "b": "phenytoin",
+   "x0_effect": 0.3689,
+   "coupling_effect": 0.6,
+   "contained_at_standard": false,
+   "dose_multiple_needed": 3.358,
+   "best_monotherapy": 3.406,
+   "pk_applied": null,
+   "assumed_other_x0": null
+  },
+  {
+   "pair": "levetiracetam + phenytoin",
+   "a": "levetiracetam",
+   "b": "phenytoin",
+   "x0_effect": 0.3689,
+   "coupling_effect": 0.4031,
+   "contained_at_standard": false,
+   "dose_multiple_needed": 3.358,
+   "best_monotherapy": 3.406,
+   "pk_applied": null,
+   "assumed_other_x0": null
+  },
+  {
+   "pair": "pregabalin + levetiracetam",
+   "a": "pregabalin",
+   "b": "levetiracetam",
+   "x0_effect": 0.0,
+   "coupling_effect": 0.7612,
+   "contained_at_standard": false,
+   "dose_multiple_needed": null,
+   "best_monotherapy": null,
+   "pk_applied": null,
+   "assumed_other_x0": null
+  }
+ ]
+}

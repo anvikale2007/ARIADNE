@@ -1,0 +1,156 @@
+# Inputs for derive_parameters.py. Each number has a status:
+#   sourced = read in a paper / label this project cites (see `sources`)
+#   assumed = modelling choice with no quantitative source yet (replace these next)
+#
+# Model (Hill n=1 occupancy at mid-range steady-state FREE concentration):
+#   nav_block = C_free / (C_free + IC50_persistentNa)
+#   gaba_frac = C_free / (C_free + EC50_GABA-A)
+#   x0_effect = (nav_block + GABA_WEIGHT * gaba_frac) / NAV_REF + other_x0
+#   coupling_effect = release_reduction
+nav_mode: inactivated  # which sodium-block measure drives excitability:
+                       #   inactivated = voltage-dependent (inactivated-state) block of peak INa, the state channels are in during
+                       #                 seizure depolarisation (DEFAULT; this is what makes CBZ/LTG "use-dependent" in practice)
+                       #   persistent  = persistent INa block (previous version; tested in robustness.py)
+                       # 10 Hz use-dependent-block IC50s are also stored; at therapeutic levels they give <3% block for every drug.
+nav_ref: 0.30          # assumed: 30% persistent-Na block = strength 1
+gaba_weight: 1.0       # DERIVED, no longer assumed. From a net-drive argument:
+                       #   net excitatory drive  ~  g_E(1 - f_Na) - g_I(1 + g_GABA)
+                       #   reduction in net drive, normalised by g_E:  f_Na + (g_I/g_E) * g_GABA
+                       # so the weight on the GABA term IS rho = g_I/g_E, the cortical inhibitory-to-excitatory
+                       # CONDUCTANCE ratio - a measurable quantity, not a free parameter.
+                       # Sourced: Haider et al. J Neurosci 2006 (in vivo up states) report gI/gE approximately
+                       # balanced, ratio ~1. Rudolph et al. 2007 (awake cat cortex) report total inhibitory
+                       # conductance several times higher than excitatory; Haider et al. 2013 (awake mouse)
+                       # likewise find the balance skewed towards inhibition.
+                       # rho = 1.0 used as the central (most conservative sourced) value; 1-4 as sensitivity.
+                       # The previous value of 0.5 was BELOW the lowest measured ratio.
+carbamazepine:
+  mw: 236.3
+  therapeutic_mg_per_L: [4, 12]          # sourced: Patsalos & Berry 2013
+  free_fraction: 0.25                    # sourced: 75% protein bound (Patsalos & Berry 2013)
+  nav_persistent_ic50_uM: 77.5           # sourced: Kahlig 2022 Table 1 (hNaV1.6)
+  nav_vdb_ic50_uM: 44.37                # sourced: inactivated-state (voltage-dependent) block of peak INa, Kahlig 2022 Table 1 (hNaV1.6)
+  nav_udb10_ic50_uM: 1418              # sourced: 10 Hz use-dependent block, Kahlig 2022 Table 1
+  other_x0: 0.0
+  release_reduction: 0.0
+  ceiling_mg_per_L: 12                   # sourced: top of the therapeutic reference range (Patsalos & Berry 2013); above this, toxicity risk rises
+  ceiling_basis: "top of therapeutic reference range 4-12 mg/L"
+  targets: [Nav (voltage/use-dependent block)]
+  sources: ["Kahlig KM et al. Epilepsia 2022;63:697-708", "Patsalos PN, Spencer EP, Berry DJ. Ther Drug Monit 2018;40:526-548"]
+lamotrigine:
+  mw: 256.1
+  therapeutic_mg_per_L: [2.5, 15]        # sourced: Patsalos, Spencer & Berry 2018 TDM update (binding 55-66%: fu 0.34-0.45)
+  free_fraction: 0.45                    # sourced: ~55% bound (FDA lamotrigine label 12.3, in vitro at 1-10 mcg/mL; Patsalos & Berry 2013). Patsalos 2018 gives 66% (fu 0.34): use as sensitivity
+  nav_persistent_ic50_uM: 78.5           # sourced: Kahlig 2022
+  nav_vdb_ic50_uM: 39.09                # sourced: inactivated-state (voltage-dependent) block of peak INa, Kahlig 2022 Table 1 (hNaV1.6)
+  nav_udb10_ic50_uM: 515.8              # sourced: 10 Hz use-dependent block, Kahlig 2022 Table 1
+  other_x0: 0.0
+  release_reduction: 0.3                 # ASSUMED: reduced glutamate release; no IC50 found (Lingamaneni & Hemmings 1999 report inhibition without a lamotrigine IC50)
+  ceiling_mg_per_L: 15                   # sourced: top of the therapeutic reference range (Patsalos 2018)
+  ceiling_basis: "top of therapeutic reference range 2.5-15 mg/L"
+  targets: [Nav, high-voltage Ca2+ (less glutamate release)]
+  sources: ["Kahlig KM et al. Epilepsia 2022;63:697-708", "Patsalos PN, Spencer EP, Berry DJ. Ther Drug Monit 2018;40:526-548"]
+valproate:
+  mw: 144.2
+  therapeutic_mg_per_L: [50, 100]        # sourced: Patsalos & Berry 2013
+  free_fraction: 0.133                   # sourced rule: fu(C) = 0.0622 + 0.000944*C (FDA label anchors 10% @40, 18.5% @130 mg/L), at mid-range 75 mg/L
+  concentration_dependent_binding: true  # binding saturates: free fraction must be recomputed at any other concentration
+  nav_persistent_ic50_uM: null
+  nav_block_override: 0.01               # sourced: 2% inhibition at 1 mM (Kahlig 2022) -> negligible
+  nav_vdb_block_override: 0.015          # sourced: 18% voltage-dependent block at 1 mM (Kahlig 2022) -> IC50 ~4.6 mM (Hill n=1) -> ~1.5% at 69 uM free
+  other_x0: 0.4                          # ASSUMED: GABA turnover + T-type Ca2+, not quantified
+  release_reduction: 0.2                 # ASSUMED
+  ceiling_mg_per_L: 100                  # sourced: top of the therapeutic reference range (Patsalos & Berry 2013). FDA label: thrombocytopenia risk rises above 110 mcg/mL (women) / 135 (men)
+  ceiling_basis: "top of therapeutic reference range 50-100 mg/L"
+  targets: [Nav (weak), T-type Ca2+, GABA turnover]
+  sources: ["Kahlig KM et al. Epilepsia 2022;63:697-708", "Patsalos PN, Spencer EP, Berry DJ. Ther Drug Monit 2018;40:526-548"]
+pregabalin:
+  mw: 159.2
+  free_conc_uM: 19.8                     # sourced: Cave,ss at 300 mg/day (product monograph: AUC0-8h 25.2 ug*h/mL); 600 mg/day = 31-38 uM
+  free_conc_uM_high: 32.7
+  ceiling_free_uM: 32.7                  # sourced: 600 mg/day is the MAXIMUM licensed dose (FDA Lyrica label sec 2.4 Table 1: adults 150 mg/day start, 600 mg/day max)
+  ceiling_basis: "maximum licensed dose 600 mg/day (FDA Lyrica label)"
+  free_fraction: 1.0                     # sourced: not protein bound
+  a2d_kd_uM: 0.006                       # sourced: KD 6.0 nM alpha2-delta-1 (Li et al. 2011); plasma is ~3 orders above KD -> binding saturating, functional effect size still unknown
+  nav_block_override: 0.0
+  other_x0: 0.0
+  release_reduction: 0.6                 # ASSUMED magnitude: binding is saturating at therapeutic levels (Li 2011 KD vs plasma), but the % reduction in transmitter release is not sourced
+  targets: [alpha2-delta subunit of voltage-gated Ca2+ channels]
+  sources: ["Li Z et al. Eur J Pharmacol 2011;667:80-90", "Field MJ et al. PNAS 2006;103:17537-17542", "Pregabalin product monograph (steady-state PK table)", "Patsalos PN, Spencer EP, Berry DJ. Ther Drug Monit 2018;40:526-548"]
+cenobamate:
+  mw: 267.7
+  free_conc_uM: 30.1                     # sourced: free Cave,ss at 200 mg/day = AUCtau 484 ug*h/mL / 24 h x fu 0.40 (Vernillet 2020; FDA review 482); 400 mg/day = 54.4 uM (sensitivity)
+  free_conc_uM_high: 54.4                # 400 mg/day
+  ceiling_free_uM: 54.4                  # sourced: 400 mg/day is the MAXIMUM recommended dose (FDA XCOPRI label 2025 sec 2, Table 1: maintenance 200 mg/day, may increase by 50 mg every 2 weeks to 400 mg/day)
+  ceiling_basis: "maximum recommended dose 400 mg/day (FDA XCOPRI label); maintenance 200 mg/day"
+  free_fraction: 0.40                    # sourced: 60% protein bound (FDA XCOPRI label, section 12.3)
+  nav_persistent_ic50_uM: 71.7           # sourced: Kahlig 2022 (same assay as CBZ/LTG), confirmed in Kahlig AAN 2023 poster. (53.1 uM rat CA3 is quoted by a review; Nakamura 2019 abstract gives no number)
+  nav_vdb_ic50_uM: 66.71                # sourced: inactivated-state (voltage-dependent) block of peak INa, Kahlig 2022 Table 1 (hNaV1.6)
+  nav_udb10_ic50_uM: 749.3              # sourced: 10 Hz use-dependent block, Kahlig 2022 Table 1
+  gaba_ec50_uM: 36.6                     # sourced: tonic GABA-A current EC50 (Sharma et al. 2020); phasic IGABA EC50 164 uM
+  other_x0: 0.0
+  release_reduction: 0.0
+  targets: [Nav (persistent current), GABA-A positive modulation]
+  sources: ["Kahlig KM et al. Epilepsia 2022;63:697-708", "Sharma R et al. Eur J Pharmacol 2020;879:173117", "Vernillet L et al. Clin Pharmacol Drug Dev 2020;9:428-443", "Steinhoff BJ et al. J Clin Med 2024;13:2757 (patient levels, cross-check)", "FDA XCOPRI prescribing information 2025, sec 12.3"]
+levetiracetam:
+  mw: 170.2
+  therapeutic_mg_per_L: [12, 46]         # sourced: Patsalos & Gulcebi 2018 report 3-34, 12-46 or 20-40 mg/L; 12-46 used, others as sensitivity
+  free_fraction: 1.0                     # sourced: "not plasma protein bound" (Patsalos & Gulcebi 2018);
+                                         # independently: "little protein binding (<10%)" (Wright et al. Front Neurol 2013;4:192).
+                                         # fu is therefore >=0.90; 1.0 used, which at most overstates free LEV by 10%.
+  ceiling_mg_per_L: 46
+  ceiling_basis: "top of therapeutic reference range 12-46 mg/L (licensed max 3 g/day, Wright 2013)"
+  half_life_h: [6, 8]                    # sourced: Wright et al. Front Neurol 2013 (adults). Relevant to the trough/peak gap.
+  nav_block_override: 0.0                # no sodium-channel block
+  other_x0: 0.0
+  # Coupling is DERIVED, not assumed: measured calcium-current block + measured release cooperativity.
+  ca_current_block: 0.18                 # sourced: LEV inhibited the high-voltage-activated Ca current by ~18% on average
+                                         # (Lukyanetz et al. Epilepsia 2002;43:9-18, rat CA1 neurons, 1-200 uM; therapeutic free
+                                         # conc ~170 uM sits near the top of that range). No IC50 was reported, so the measured
+                                         # block is used directly rather than fitting an occupancy curve.
+  ca_current_block_high: 0.37            # sourced: ~37% maximal block of the N-type current once isolated (same paper).
+                                         # Upper bound: assumes N-type carries essentially all release-triggering Ca entry.
+  release_reduction: null                # computed from ca_current_block via the cooperativity exponent
+  targets: [SV2A (not quantified), N-type Ca2+ (Cav2.2)]
+  sources: ["Lukyanetz EA, Shkryl VM, Kostyuk PG. Selective blockade of N-type calcium channels by levetiracetam. Epilepsia 2002;43:9-18",
+            "Reid CA, Bekkers JM, Clements JD. N- and P/Q-type Ca2+ channels mediate transmitter release with a similar cooperativity at rat hippocampal autapses. J Neurosci 1998;18:2849-2855",
+            "Patsalos PN, Gulcebi MI et al. 2018 (LEV reference ranges 3-34 / 12-46 / 20-40 mg/L; not protein bound)",
+            "Wright C, Downing J, Mungall D, et al. Clinical pharmacology and pharmacokinetics of levetiracetam. Front Neurol 2013;4:192 (protein binding <10%, half-life 6-8 h, dose 1000-3000 mg/day, max 3 g/day, no PK interaction with CBZ/VPA/TPM/LTG)"]
+  caveat: "SV2A binding is levetiracetam's principal mechanism and has NO published effect size. Only the N-type calcium
+    component is modelled here, so this is a LOWER BOUND on levetiracetam's true effect in this framework."
+phenytoin:
+  mw: 252.3
+  therapeutic_mg_per_L: [10, 20]         # sourced: narrow therapeutic range; loss of effect <10 mg/L, neurotoxicity >20 mg/L
+                                         # (Jun H et al. Drugs R D 2020;20:343-358, citing refs 4,13,14,15,16); matches the FDA label range
+  free_fraction: 0.10                    # sourced: "highly bound to plasma albumin (~90%) in healthy adults" (Jun 2020)
+  ceiling_mg_per_L: 20
+  ceiling_basis: "top of therapeutic range 10-20 mg/L; above this, dose-related neurotoxicity (nystagmus, ataxia)"
+  nav_persistent_ic50_uM: 59.82          # sourced: Kahlig KM et al. Epilepsia 2022;63:697-708, Table 1, hNaV1.6 (59,820 nM, slope 0.8)
+  nav_vdb_ic50_uM: 47.78                # sourced: same table, voltage-dependent (inactivated-state) block of peak INa (47,780 nM, slope 1.0)
+  nav_udb10_ic50_uM: 876.6              # sourced: same table, 10 Hz use-dependent block (876,600 nM, slope 0.6)
+  other_x0: 0.0
+  release_reduction: 0.0
+  targets: [Nav (inactivated-state block, non-selective across subtypes)]
+  sources: ["Kahlig KM et al. Epilepsia 2022;63:697-708 (Table 1, hNaV1.6; CBZ/LTG/CNB values in the same table match those already used here, confirming the source)",
+            "Jun H, Rong Y, Yih C, Ho J, Cheng W, Kiang TKL. Comparisons of four protein-binding models characterizing the pharmacokinetics of unbound phenytoin in adult patients. Drugs R D 2020;20:343-358"]
+  caveat: "Phenytoin has non-linear (Michaelis-Menten) elimination and concentration-dependent albumin binding, so a single
+    mid-range free concentration is a cruder approximation for phenytoin than for the other drugs modelled here."
+lacosamide:
+  mw: 250.3                              # sourced: Rogawski MA et al. (PMC3759704), "molecular weight of 250.3 Da"
+  therapeutic_mg_per_L: [10, 20]         # sourced: updated TDM reference range (raised from 1-10); see caveat
+  free_fraction: 0.85                    # sourced: "low (<15%) protein binding" (Rogawski, PMC3759704) -> fu >= 0.85;
+                                         # 0.85 is the conservative end (less free drug than <15% binding would allow)
+  ceiling_mg_per_L: 20
+  ceiling_basis: "top of the 10-20 mg/L reference range"
+  nav_vdb_ic50_uM: 269.3                 # sourced: Kahlig KM et al. Epilepsia 2022;63:697-708, Table 1, hNaV1.6
+                                         # (269,300 nM, slope 1.2), voltage-dependent (inactivated-state) block of peak INa
+  other_x0: 0.0
+  release_reduction: 0.0
+  targets: [Nav (enhances slow inactivation; measured here as inactivated-state block)]
+  sources: ["Kahlig KM et al. Epilepsia 2022;63:697-708 (Table 1, hNaV1.6, PatchXpress whole-cell; the CBZ/LTG/CNB/PHT values in the same table match those already used here)",
+            "Rogawski MA, Tofighy A, White HS, Matagne A, Wolff C. Current understanding of the mechanism of action of the antiepileptic drug lacosamide (PMC3759704): MW 250.3 Da, protein binding <15%",
+            "Therapeutic drug monitoring of lacosamide: is 10 to 20 mg/L a suitable reference range for patients with epilepsy? Clin Neuropharmacol, 28 Dec 2022 (PMID 36597805)"]
+  caveat: "Lacosamide's distinctive action is on SLOW inactivation, not the fast inactivation the other sodium blockers here
+    act on; the Kahlig assay measures inactivated-state block of peak INa, which captures only part of that. The reference
+    range itself is contested: the 2022 Clin Neuropharmacol analysis found 10-20 mg/L increases toxicity and proposed
+    10-12 mg/L, which would lower the modelled free concentration by about a quarter."

@@ -1,0 +1,7 @@
+ID,ILAE_Year1,seizure_free,Op_Side,Op_Type,Pathology,x0_calibrated,cal_capacity,capacity_pre,capacity_post_graded,capacity_post_binary,reduction,reduction_binary,resected_regions_ge50pct,resected_fraction_total,hemi_regions
+1,4.0,False,R,T Lx,OTHER,-2.1117,0.506,0.6627,0.2903,0.5523,0.3724,0.1104,5,5.348,41
+2,1.0,True,R,T Lx,HS,-2.1187,0.506,0.5904,0.2064,0.4816,0.384,0.1089,5,5.241,41
+3,1.0,True,L,T Lesx,DNT,-2.1187,0.341,0.5422,0.47,0.5422,0.0723,0.0,0,0.079,41
+7,1.0,True,R,T Lx,HS,-2.1258,0.506,0.6383,0.2757,0.5048,0.3626,0.1336,4,4.557,41
+143,4.0,False,L,T Lx,HS,-2.1187,0.424,0.5422,0.2314,0.3593,0.3108,0.1829,4,4.854,41
+145,3.0,False,L,T Lesx,DUAL,-2.1187,0.588,0.6868,0.3055,0.5521,0.3813,0.1347,3,3.94,41

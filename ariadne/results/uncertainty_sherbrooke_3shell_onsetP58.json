@@ -1,0 +1,1358 @@
+{
+ "surface": "surface_sherbrooke_3shell_onsetP58.json",
+ "brain": "sherbrooke_3shell_onsetP58",
+ "onset": "P58",
+ "baseline": {
+  "gaba_weight": 1.0,
+  "nav_ref": 0.3,
+  "nav_mode": "inactivated",
+  "thresholds": {
+   "cenobamate": 0.925,
+   "lamotrigine": 2.115,
+   "valproate": null,
+   "carbamazepine": null,
+   "pregabalin": null,
+   "levetiracetam": null
+  },
+  "ranking": [
+   "cenobamate",
+   "lamotrigine",
+   "valproate",
+   "carbamazepine",
+   "pregabalin",
+   "levetiracetam"
+  ]
+ },
+ "therapeutic_ceiling": [
+  {
+   "drug": "cenobamate",
+   "basis": "maximum recommended dose 400 mg/day (FDA XCOPRI label); maintenance 200 mg/day",
+   "free_standard_uM": 30.1,
+   "free_ceiling_uM": 54.4,
+   "conc_ratio": 1.81,
+   "effect_ratio": 1.37,
+   "x0_standard": 2.541,
+   "x0_ceiling": 3.49,
+   "coupling_standard": 0.0,
+   "coupling_ceiling": 0.0,
+   "threshold_strength": 0.925,
+   "contained_at_standard": true,
+   "contained_at_ceiling": true
+  },
+  {
+   "drug": "lamotrigine",
+   "basis": "top of therapeutic reference range 2.5-15 mg/L",
+   "free_standard_uM": 15.4,
+   "free_ceiling_uM": 26.4,
+   "conc_ratio": 1.71,
+   "effect_ratio": 1.43,
+   "x0_standard": 0.941,
+   "x0_ceiling": 1.342,
+   "coupling_standard": 0.3,
+   "coupling_ceiling": 0.424,
+   "threshold_strength": 2.115,
+   "contained_at_standard": false,
+   "contained_at_ceiling": false
+  },
+  {
+   "drug": "valproate",
+   "basis": "top of therapeutic reference range 50-100 mg/L",
+   "free_standard_uM": 69.2,
+   "free_ceiling_uM": 108.6,
+   "conc_ratio": 1.57,
+   "effect_ratio": 1.31,
+   "x0_standard": 0.45,
+   "x0_ceiling": 0.589,
+   "coupling_standard": 0.2,
+   "coupling_ceiling": 0.282,
+   "threshold_strength": null,
+   "contained_at_standard": false,
+   "contained_at_ceiling": false
+  },
+  {
+   "drug": "carbamazepine",
+   "basis": "top of therapeutic reference range 4-12 mg/L",
+   "free_standard_uM": 8.5,
+   "free_ceiling_uM": 12.7,
+   "conc_ratio": 1.5,
+   "effect_ratio": 1.39,
+   "x0_standard": 0.534,
+   "x0_ceiling": 0.742,
+   "coupling_standard": 0.0,
+   "coupling_ceiling": 0.0,
+   "threshold_strength": null,
+   "contained_at_standard": false,
+   "contained_at_ceiling": false
+  },
+  {
+   "drug": "pregabalin",
+   "basis": "maximum licensed dose 600 mg/day (FDA Lyrica label)",
+   "free_standard_uM": 19.8,
+   "free_ceiling_uM": 32.7,
+   "conc_ratio": 1.65,
+   "effect_ratio": 1.19,
+   "x0_standard": 0.0,
+   "x0_ceiling": 0.0,
+   "coupling_standard": 0.6,
+   "coupling_ceiling": 0.712,
+   "threshold_strength": null,
+   "contained_at_standard": false,
+   "contained_at_ceiling": false
+  },
+  {
+   "drug": "levetiracetam",
+   "basis": "top of therapeutic reference range 12-46 mg/L (licensed max 3 g/day, Wright 2013)",
+   "free_standard_uM": 170.4,
+   "free_ceiling_uM": 270.3,
+   "conc_ratio": 1.59,
+   "effect_ratio": 1.0,
+   "x0_standard": 0.0,
+   "x0_ceiling": 0.0,
+   "coupling_standard": 0.403,
+   "coupling_ceiling": 0.403,
+   "threshold_strength": null,
+   "contained_at_standard": false,
+   "contained_at_ceiling": false
+  }
+ ],
+ "gaba_curve": [
+  {
+   "gaba_weight": 0.0,
+   "ranking": [
+    "lamotrigine",
+    "cenobamate",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 2.265,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.02,
+   "ranking": [
+    "lamotrigine",
+    "cenobamate",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 2.2,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.04,
+   "ranking": [
+    "lamotrigine",
+    "cenobamate",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 2.14,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.06,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 2.085,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.08,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 2.03,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.1,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 1.98,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.12,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 1.93,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.14,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 1.885,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.16,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 1.84,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.18,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 1.795,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.2,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 1.755,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.22,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 1.72,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.24,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 1.68,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.26,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 1.645,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.28,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 1.61,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.3,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 1.58,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.32,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 1.55,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.34,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 1.52,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.36,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 1.49,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.38,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 1.46,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.4,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 1.435,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.42,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 1.41,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.44,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 1.385,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.46,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 1.36,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.48,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 1.335,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.5,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 1.315,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.52,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 1.29,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.54,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 1.27,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.56,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 1.25,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.58,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 1.23,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.6,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 1.21,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.62,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 1.195,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.64,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 1.175,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.66,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 1.16,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.68,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 1.14,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.7,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 1.125,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.72,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 1.11,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.74,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 1.095,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.76,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 1.08,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.78,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 1.065,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.8,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 1.05,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.82,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 1.035,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.84,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 1.02,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.86,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 1.01,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.88,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 0.995,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.9,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 0.985,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.92,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 0.97,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.94,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 0.96,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.96,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 0.95,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 0.98,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 0.935,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  },
+  {
+   "gaba_weight": 1.0,
+   "ranking": [
+    "cenobamate",
+    "lamotrigine",
+    "valproate",
+    "carbamazepine",
+    "pregabalin",
+    "levetiracetam"
+   ],
+   "thresholds": {
+    "cenobamate": 0.925,
+    "lamotrigine": 2.115,
+    "valproate": null,
+    "carbamazepine": null,
+    "pregabalin": null,
+    "levetiracetam": null
+   }
+  }
+ ],
+ "gaba_flip": {
+  "between": [
+   0.04,
+   0.06
+  ],
+  "from": "lamotrigine",
+  "to": "cenobamate"
+ },
+ "unmodelled_drug_inverse": [
+  {
+   "to_match": "lamotrigine",
+   "target_threshold": 2.115,
+   "release_reduction_needed": null,
+   "feasible": null,
+   "interpretable_as": "target never contains the seizure"
+  },
+  {
+   "to_match": "cenobamate",
+   "target_threshold": 0.925,
+   "release_reduction_needed": null,
+   "feasible": null,
+   "interpretable_as": "target never contains the seizure"
+  }
+ ],
+ "monte_carlo_sourced": {
+  "n_draws": 2000,
+  "full_uncertainty": false,
+  "p_ranks_first": {
+   "cenobamate": 0.9795,
+   "lamotrigine": 0.0205
+  },
+  "most_likely_orders": [
+   {
+    "order": [
+     "cenobamate",
+     "lamotrigine",
+     "valproate",
+     "carbamazepine",
+     "pregabalin",
+     "levetiracetam"
+    ],
+    "p": 0.543
+   },
+   {
+    "order": [
+     "cenobamate",
+     "lamotrigine",
+     "carbamazepine",
+     "valproate",
+     "pregabalin",
+     "levetiracetam"
+    ],
+    "p": 0.219
+   },
+   {
+    "order": [
+     "cenobamate",
+     "valproate",
+     "lamotrigine",
+     "carbamazepine",
+     "pregabalin",
+     "levetiracetam"
+    ],
+    "p": 0.083
+   },
+   {
+    "order": [
+     "cenobamate",
+     "carbamazepine",
+     "lamotrigine",
+     "valproate",
+     "pregabalin",
+     "levetiracetam"
+    ],
+    "p": 0.079
+   },
+   {
+    "order": [
+     "cenobamate",
+     "carbamazepine",
+     "valproate",
+     "lamotrigine",
+     "pregabalin",
+     "levetiracetam"
+    ],
+    "p": 0.043
+   }
+  ],
+  "thresholds": {
+   "cenobamate": {
+    "p_contains_within_4x": 1.0,
+    "median": 1.085,
+    "p10": 0.86,
+    "p90": 1.415
+   },
+   "lamotrigine": {
+    "p_contains_within_4x": 0.8395,
+    "median": 2.175,
+    "p10": 1.46,
+    "p90": 3.37
+   },
+   "valproate": {
+    "p_contains_within_4x": 0.5475,
+    "median": 3.385,
+    "p10": 3.05,
+    "p90": 3.833
+   },
+   "carbamazepine": {
+    "p_contains_within_4x": 0.4055,
+    "median": 3.07,
+    "p10": 2.34,
+    "p90": 3.805
+   },
+   "pregabalin": {
+    "p_contains_within_4x": 0.0,
+    "median": null,
+    "p10": null,
+    "p90": null
+   },
+   "levetiracetam": {
+    "p_contains_within_4x": 0.0,
+    "median": null,
+    "p10": null,
+    "p90": null
+   }
+  },
+  "pairwise_better": {
+   "cenobamate < lamotrigine": 0.98,
+   "cenobamate < valproate": 1.0,
+   "cenobamate < carbamazepine": 1.0,
+   "cenobamate < pregabalin": 1.0,
+   "cenobamate < levetiracetam": 1.0,
+   "lamotrigine < valproate": 0.79,
+   "lamotrigine < carbamazepine": 0.768,
+   "lamotrigine < pregabalin": 0.84,
+   "lamotrigine < levetiracetam": 0.84,
+   "valproate < carbamazepine": 0.381,
+   "valproate < pregabalin": 0.547,
+   "valproate < levetiracetam": 0.547,
+   "carbamazepine < pregabalin": 0.406,
+   "carbamazepine < levetiracetam": 0.406,
+   "pregabalin < levetiracetam": 0.0
+  },
+  "lookups_outside_mapped_range": 0
+ },
+ "monte_carlo_full": {
+  "n_draws": 2000,
+  "full_uncertainty": true,
+  "p_ranks_first": {
+   "cenobamate": 0.861,
+   "lamotrigine": 0.084,
+   "valproate": 0.0545,
+   "carbamazepine": 0.0005
+  },
+  "most_likely_orders": [
+   {
+    "order": [
+     "cenobamate",
+     "lamotrigine",
+     "valproate",
+     "carbamazepine",
+     "pregabalin",
+     "levetiracetam"
+    ],
+    "p": 0.403
+   },
+   {
+    "order": [
+     "cenobamate",
+     "valproate",
+     "lamotrigine",
+     "carbamazepine",
+     "pregabalin",
+     "levetiracetam"
+    ],
+    "p": 0.228
+   },
+   {
+    "order": [
+     "cenobamate",
+     "lamotrigine",
+     "carbamazepine",
+     "valproate",
+     "pregabalin",
+     "levetiracetam"
+    ],
+    "p": 0.148
+   },
+   {
+    "order": [
+     "lamotrigine",
+     "cenobamate",
+     "valproate",
+     "carbamazepine",
+     "pregabalin",
+     "levetiracetam"
+    ],
+    "p": 0.054
+   },
+   {
+    "order": [
+     "valproate",
+     "cenobamate",
+     "lamotrigine",
+     "carbamazepine",
+     "pregabalin",
+     "levetiracetam"
+    ],
+    "p": 0.04
+   }
+  ],
+  "thresholds": {
+   "cenobamate": {
+    "p_contains_within_4x": 0.997,
+    "median": 1.095,
+    "p10": 0.572,
+    "p90": 2.195
+   },
+   "lamotrigine": {
+    "p_contains_within_4x": 0.862,
+    "median": 1.975,
+    "p10": 1.105,
+    "p90": 3.222
+   },
+   "valproate": {
+    "p_contains_within_4x": 0.759,
+    "median": 2.35,
+    "p10": 1.67,
+    "p90": 3.485
+   },
+   "carbamazepine": {
+    "p_contains_within_4x": 0.415,
+    "median": 2.812,
+    "p10": 1.715,
+    "p90": 3.715
+   },
+   "pregabalin": {
+    "p_contains_within_4x": 0.0,
+    "median": null,
+    "p10": null,
+    "p90": null
+   },
+   "levetiracetam": {
+    "p_contains_within_4x": 0.0,
+    "median": null,
+    "p10": null,
+    "p90": null
+   }
+  },
+  "pairwise_better": {
+   "cenobamate < lamotrigine": 0.902,
+   "cenobamate < valproate": 0.931,
+   "cenobamate < carbamazepine": 0.995,
+   "cenobamate < pregabalin": 0.997,
+   "cenobamate < levetiracetam": 0.997,
+   "lamotrigine < valproate": 0.637,
+   "lamotrigine < carbamazepine": 0.799,
+   "lamotrigine < pregabalin": 0.862,
+   "lamotrigine < levetiracetam": 0.862,
+   "valproate < carbamazepine": 0.64,
+   "valproate < pregabalin": 0.759,
+   "valproate < levetiracetam": 0.759,
+   "carbamazepine < pregabalin": 0.415,
+   "carbamazepine < levetiracetam": 0.415,
+   "pregabalin < levetiracetam": 0.0
+  },
+  "lookups_outside_mapped_range": 0
+ },
+ "ic50_fold_assumed": 2.0
+}

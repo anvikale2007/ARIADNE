@@ -1,0 +1,3 @@
+# EXAMPLE input (not a real patient). List variants as reported on a genetic test.
+variants:
+  - "HLA-B*15:02"

@@ -1,0 +1,98 @@
+[
+ {
+  "coupling_multiplier": 0.1,
+  "ranking": [
+   "cenobamate",
+   "lamotrigine",
+   "carbamazepine",
+   "valproate",
+   "phenytoin",
+   "pregabalin",
+   "levetiracetam"
+  ]
+ },
+ {
+  "coupling_multiplier": 0.25,
+  "ranking": [
+   "cenobamate",
+   "lamotrigine",
+   "carbamazepine",
+   "valproate",
+   "phenytoin",
+   "pregabalin",
+   "levetiracetam"
+  ]
+ },
+ {
+  "coupling_multiplier": 0.5,
+  "ranking": [
+   "cenobamate",
+   "lamotrigine",
+   "carbamazepine",
+   "valproate",
+   "phenytoin",
+   "pregabalin",
+   "levetiracetam"
+  ]
+ },
+ {
+  "coupling_multiplier": 1,
+  "ranking": [
+   "cenobamate",
+   "lamotrigine",
+   "valproate",
+   "carbamazepine",
+   "pregabalin",
+   "phenytoin",
+   "levetiracetam"
+  ]
+ },
+ {
+  "coupling_multiplier": 2,
+  "ranking": [
+   "cenobamate",
+   "lamotrigine",
+   "pregabalin",
+   "valproate",
+   "carbamazepine",
+   "levetiracetam",
+   "phenytoin"
+  ]
+ },
+ {
+  "coupling_multiplier": 4,
+  "ranking": [
+   "cenobamate",
+   "lamotrigine",
+   "pregabalin",
+   "levetiracetam",
+   "valproate",
+   "carbamazepine",
+   "phenytoin"
+  ]
+ },
+ {
+  "coupling_multiplier": 10,
+  "ranking": [
+   "pregabalin",
+   "lamotrigine",
+   "cenobamate",
+   "levetiracetam",
+   "valproate",
+   "carbamazepine",
+   "phenytoin"
+  ]
+ },
+ {
+  "coupling_multiplier": 25,
+  "ranking": [
+   "pregabalin",
+   "levetiracetam",
+   "lamotrigine",
+   "valproate",
+   "cenobamate",
+   "carbamazepine",
+   "phenytoin"
+  ]
+ }
+]

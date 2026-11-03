@@ -1,0 +1,10 @@
+ID,ILAE_Year1,seizure_free,Op_Side,Op_Type,Pathology,x0_calibrated,cal_capacity,capacity_pre,capacity_post,reduction,resected_fraction_total,n_onsets
+1,4.0,False,R,T Lx,OTHER,-2.1187,0.407,0.4073,0.1878,0.2195,5.348,15
+2,1.0,True,R,T Lx,HS,-2.1187,0.704,0.6707,0.3089,0.3618,5.241,15
+6,3.0,False,R,P Lesx,CAV,-2.1187,0.704,0.6707,0.6707,0.0,0.01,15
+3,1.0,True,L,T Lesx,DNT,-2.1187,0.506,0.4732,0.4073,0.0659,0.079,15
+14,4.0,False,R,T Lx,OTHER,-2.1187,0.407,0.539,0.2463,0.2927,5.824,15
+5,2.0,True,L,T Lx,HS,-2.1187,0.802,0.8024,0.6114,0.1911,4.552,15
+24,4.0,False,R,T Lx,OTHER,-2.1187,0.802,0.7366,0.3634,0.3732,5.224,15
+7,1.0,True,R,T Lx,HS,-2.1187,0.901,0.8683,0.5537,0.3146,4.557,15
+28,5.0,False,R,T Lx,OTHER,-2.1187,0.802,0.8024,0.2463,0.5561,6.409,15

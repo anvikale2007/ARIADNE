@@ -1,0 +1,42 @@
+# Gene/variant -> drug safety rules from published guidance and labels (not learned predictions).
+# action: exclude | flag.  status: sourced = citation and statement checked (see VALUE_VERIFICATION.md).
+- id: hla_b_1502_cbz
+  match:
+  - HLA-B*15:02
+  drug: carbamazepine
+  action: exclude
+  reason: HLA-B*15:02 carriers have a high risk of Stevens-Johnson syndrome / toxic epidermal necrolysis on carbamazepine.
+  source: 'Phillips EJ et al. CPIC Guideline for HLA Genotype and Use of Carbamazepine and Oxcarbazepine: 2017 Update. Clin Pharmacol Ther 2018;103(4):574-581. doi:10.1002/cpt.1004 (citation verified).'
+  status: guideline
+- id: hla_a_3101_cbz
+  match:
+  - HLA-A*31:01
+  drug: carbamazepine
+  action: flag
+  reason: HLA-A*31:01 is associated with carbamazepine hypersensitivity reactions; use with caution / consider alternatives.
+  source: Phillips EJ et al. Clin Pharmacol Ther 2018;103:574-581 (CPIC).
+  status: guideline
+- id: scn1a_nav_blockers
+  match:
+  - DRAVET
+  - SCN1A LOSS
+  - SCN1A:LOSS
+  - SCN1A LOF
+  - SCN1A:LOF
+  drug:
+  - carbamazepine
+  - lamotrigine
+  action: exclude
+  reason: 'Dravet syndrome / SCN1A loss-of-function: sodium-channel blockers (incl. carbamazepine, lamotrigine) are contraindicated because they can exacerbate seizures. Lamotrigine has at most a very limited adult role. Not applied to SCN1A
+    gain-of-function variants.'
+  source: 'Wirrell EC. Treatment of Dravet syndrome. Can J Neurol Sci 2016;43(S3):S13-S18 (statement verified: sodium channel agents ''should be avoided, as they typically exacerbate seizures''). Context: Wirrell EC et al. International consensus,
+    Epilepsia 2022;63:1761-1777 (citation verified; the specific contraindication wording was not checked in the full text).'
+  status: sourced
+- id: polg_valproate
+  match:
+  - POLG
+  drug: valproate
+  action: exclude
+  reason: 'POLG-related mitochondrial disease: valproate is contraindicated (risk of fatal liver failure).'
+  source: FDA valproic acid / Depakote labels (Contraindications, Boxed Warning); Stewart JD et al. Hepatology 2010;52:1791-1796 (POLG variation OR 23.6 for valproate liver toxicity).
+  status: sourced

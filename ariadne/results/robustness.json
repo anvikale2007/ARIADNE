@@ -1,0 +1,104 @@
+[
+ {
+  "variant": "coupling K = -4.0",
+  "ranking": [
+   "cenobamate",
+   "lamotrigine",
+   "valproate",
+   "carbamazepine",
+   "pregabalin"
+  ],
+  "thresholds": {
+   "carbamazepine": 2.062,
+   "lamotrigine": 0.938,
+   "valproate": 1.938,
+   "pregabalin": 3.312,
+   "cenobamate": 0.562
+  }
+ },
+ {
+  "variant": "coupling K = -6.0",
+  "ranking": [
+   "cenobamate",
+   "lamotrigine",
+   "carbamazepine",
+   "valproate",
+   "pregabalin"
+  ],
+  "thresholds": {
+   "carbamazepine": 0.562,
+   "lamotrigine": 0.312,
+   "valproate": 0.562,
+   "pregabalin": 0.812,
+   "cenobamate": 0.188
+  }
+ },
+ {
+  "variant": "GABA weight = 0.0",
+  "ranking": [
+   "lamotrigine",
+   "cenobamate",
+   "carbamazepine",
+   "valproate",
+   "pregabalin"
+  ],
+  "thresholds": {
+   "carbamazepine": 1.562,
+   "lamotrigine": 0.688,
+   "valproate": 1.562,
+   "pregabalin": 2.188,
+   "cenobamate": 0.812
+  }
+ },
+ {
+  "variant": "GABA weight = 1.0",
+  "ranking": [
+   "cenobamate",
+   "lamotrigine",
+   "carbamazepine",
+   "valproate",
+   "pregabalin"
+  ],
+  "thresholds": {
+   "carbamazepine": 1.562,
+   "lamotrigine": 0.688,
+   "valproate": 1.562,
+   "pregabalin": 2.188,
+   "cenobamate": 0.312
+  }
+ },
+ {
+  "variant": "400 mg/day exposure (cenobamate, pregabalin)",
+  "ranking": [
+   "cenobamate",
+   "lamotrigine",
+   "carbamazepine",
+   "valproate",
+   "pregabalin"
+  ],
+  "thresholds": {
+   "carbamazepine": 1.562,
+   "lamotrigine": 0.688,
+   "valproate": 1.562,
+   "pregabalin": 2.188,
+   "cenobamate": 0.312
+  }
+ },
+ {
+  "variant": "Na block = persistent current (old model)",
+  "ranking": [
+   "cenobamate",
+   "lamotrigine",
+   "valproate",
+   "pregabalin",
+   "carbamazepine"
+  ],
+  "thresholds": {
+   "carbamazepine": 2.562,
+   "lamotrigine": 1.188,
+   "valproate": 1.562,
+   "pregabalin": 2.188,
+   "cenobamate": 0.438
+  }
+ }
+]

@@ -1,0 +1,65 @@
+{
+ "seizure_type": "absence",
+ "type_label": "Absence seizure",
+ "class": "generalized",
+ "class_label": "Generalized",
+ "simulate": false,
+ "why": "Engages bilateral networks from the start (absence is thalamocortical). ARIADNE's single-onset spread model does not apply.",
+ "drugs": {
+  "carbamazepine": {
+   "status": "avoid",
+   "source": "NG217",
+   "rec": "5.3.3: may exacerbate absence seizures",
+   "source_text": "NICE guideline NG217, Epilepsies in children, young people and adults, section 5 (read on nice.org.uk, 31 Oct 2026; includes the 2025 valproate Box 2 wording)",
+   "label": "Avoid: may worsen"
+  },
+  "lamotrigine": {
+   "status": "later_line",
+   "source": "NG217",
+   "rec": "5.3.2",
+   "source_text": "NICE guideline NG217, Epilepsies in children, young people and adults, section 5 (read on nice.org.uk, 31 Oct 2026; includes the 2025 valproate Box 2 wording)",
+   "label": "Later-line / add-on"
+  },
+  "valproate": {
+   "status": "restricted",
+   "source": "NG217",
+   "rec": "5.3.2 (Box 2 restrictions apply); Do not start sodium valproate for the first time in people (male or female) younger than 55 unless two specialists independently agree and document that there is no other effective, tolerated treatment, or that reproductive risks do not apply. In women and girls of childbearing potential, use only if other options failed and the Pregnancy Prevention Programme is in place.",
+   "source_text": "NICE guideline NG217, Epilepsies in children, young people and adults, section 5 (read on nice.org.uk, 31 Oct 2026; includes the 2025 valproate Box 2 wording)",
+   "guideline_status": "later_line",
+   "label": "Restricted (valproate rules)"
+  },
+  "pregabalin": {
+   "status": "avoid",
+   "source": "NG217",
+   "rec": "5.3.3: may exacerbate absence seizures",
+   "source_text": "NICE guideline NG217, Epilepsies in children, young people and adults, section 5 (read on nice.org.uk, 31 Oct 2026; includes the 2025 valproate Box 2 wording)",
+   "label": "Avoid: may worsen"
+  },
+  "cenobamate": {
+   "status": "not_indicated",
+   "source": "XCOPRI",
+   "rec": "licensed for partial-onset seizures only",
+   "source_text": "FDA XCOPRI (cenobamate) prescribing information, section 1: partial-onset seizures in adults",
+   "label": "Not licensed for this"
+  }
+ },
+ "eligible_for_simulation": [],
+ "guideline_only": [
+  {
+   "drug": "ethosuximide",
+   "status": "first_line",
+   "rec": "NG217 5.3.1"
+  },
+  {
+   "drug": "levetiracetam",
+   "status": "later_line",
+   "rec": "NG217 5.3.2"
+  }
+ ],
+ "patient": {
+  "age": 9.0,
+  "childbearing": false,
+  "valproate_restricted": true
+ },
+ "classification_source": "Beniczky S, Trinka E, Wirrell E, et al. Updated classification of epileptic seizures: Position paper of the ILAE. Epilepsia 2025. doi:10.1111/epi.18338 (four classes and consciousness classifier confirmed on ilae.org; type names via Epilepsy Action Australia fact sheet, May 2026)"
+}

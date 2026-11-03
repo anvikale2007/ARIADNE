@@ -1,0 +1,13 @@
+numpy
+scipy
+numba
+pyyaml
+matplotlib
+scikit-learn
+nibabel
+dipy
+streamlit
+pyserial
+# optional (template connectome + equation check only):
+tvb-library
+tvb-data

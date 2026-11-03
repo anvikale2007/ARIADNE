@@ -1,0 +1,11 @@
+SEIZURE-FREE (ILAE 1-2):
+5, 8, 9, 11, 12, 16, 18, 19, 21, 22, 25, 26, 27, 30, 33, 34, 35
+
+NOT SEIZURE-FREE (ILAE 3-5):
+4, 6, 10, 14, 17, 23, 24, 28, 29, 31, 32, 38, 40, 42, 49, 50, 53
+
+CONTROLS:
+4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008, 4009, 4010, 4011, 4012, 4013, 4014, 4015
+
+File pattern: sub-<ID>_ses-<N>_Deterministic-Tractography_36-Lausanne_Count.csv
+Folder: Lausanne-36 / Deterministic / Count. Prefer ses-1; use ses-2 only if no ses-1.

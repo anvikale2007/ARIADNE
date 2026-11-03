@@ -1,0 +1,9 @@
+{
+ "regions": 70,
+ "streamlines": 59175,
+ "edges": 956,
+ "density": 0.3958592132505176,
+ "isolated_regions": 1,
+ "median_strength": 1429.5,
+ "parcellation": "geometric k-means"
+}

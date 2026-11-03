@@ -1,0 +1,126 @@
+# Clinical gate: seizure type (ILAE 2025) -> which drugs are guideline options, which to avoid, and whether ARIADNE's
+# focal-spread simulation applies. Every drug status cites a source key from `sources` below.
+# status values:
+#   first_line     guideline first-line option for this seizure type
+#   later_line     guideline second/third-line or add-on option
+#   not_listed     not among the guideline options for this seizure type (not a safety warning)
+#   not_indicated  outside the licensed indication
+#   avoid          guideline says it may worsen these seizures / do not use
+# check = true marks wording read from an older or partly rendered version of the page: verify before citing.
+
+sources:
+  ILAE2025: "Beniczky S, Trinka E, Wirrell E, et al. Updated classification of epileptic seizures: Position paper of the ILAE. Epilepsia 2025. doi:10.1111/epi.18338 (four classes and consciousness classifier confirmed on ilae.org; type names via Epilepsy Action Australia fact sheet, May 2026)"
+  NG217: "NICE guideline NG217, Epilepsies in children, young people and adults, section 5. Recommendations 5.1.1-5.1.4, 5.2.1-5.2.6, 5.3.1-5.3.6, 5.4.2-5.4.3 and 5.5.1-5.5.6 read verbatim from the NCBI Bookshelf full text (NBK581165) on 31 Oct 2026; includes the 2025 valproate Box 2 wording"
+  TA753: "NICE technology appraisal TA753, Cenobamate for treating focal onset seizures in epilepsy, recommendation 1.1"
+  XCOPRI: "FDA XCOPRI (cenobamate) prescribing information, section 1: partial-onset seizures in adults"
+  LYRICA: "FDA Lyrica (pregabalin) prescribing information, section 1: adjunctive therapy for partial-onset seizures"
+  WRIGHT2013: "Wright C, Downing J, Mungall D, et al. Clinical pharmacology and pharmacokinetics of levetiracetam. Front Neurol 2013;4:192"
+
+classes:
+  focal: {label: "Focal", simulate: true,
+          why: "Starts in one network of one hemisphere. ARIADNE asks which drug best stops it spreading."}
+  generalized: {label: "Generalized", simulate: false,
+                why: "Engages bilateral networks from the start (absence is thalamocortical). ARIADNE's single-onset spread model does not apply."}
+  unknown: {label: "Unknown (focal or generalized)", simulate: false,
+            why: "Not yet known whether focal or generalized. Classify first (EEG, MRI, history); ARIADNE does not simulate."}
+  unclassified: {label: "Unclassified", simulate: false,
+                 why: "Not enough information to classify. Temporary label; ARIADNE does not simulate."}
+
+types:
+  focal_preserved_consciousness: &focal
+    label: "Focal preserved consciousness seizure (FPC)"
+    class: focal
+    drugs:
+      lamotrigine:   {status: first_line, source: NG217, rec: "5.2.1"}
+      carbamazepine: {status: later_line, source: NG217, rec: "5.2.2 (second-line monotherapy); 5.2.4 (first-line add-on)"}
+      cenobamate:    {status: later_line, source: NG217, rec: "5.2.5: second-line add-on (NICE TA753 1.1: after a first-line add-on has failed)"}
+      pregabalin:    {status: later_line, source: NG217, rec: "5.2.5: second-line add-on"}
+      lacosamide:    {status: later_line, source: NG217, rec: "5.2.3 (third-line monotherapy); 5.2.4 (first-line add-on)"}
+      levetiracetam: {status: first_line, source: NG217, rec: "5.2.1 (with lamotrigine)"}
+      phenytoin:     {status: later_line, source: NG217, rec: "5.2.6: third-line add-on"}
+      valproate:     {status: later_line, source: NG217, rec: "5.2.6: third-line add-on (MHRA Box 2 safety measures apply)"}
+    guideline_only:  # guideline options ARIADNE does not model (no quantified mechanism / not yet added)
+      - {drug: levetiracetam, status: first_line, rec: "NG217 5.2.1"}
+  focal_impaired_consciousness:
+    <<: *focal
+    label: "Focal impaired consciousness seizure (FIC)"
+  focal_to_bilateral_tonic_clonic:
+    <<: *focal
+    label: "Focal-to-bilateral tonic-clonic seizure (FBTC)"
+
+  generalized_tonic_clonic:
+    label: "Generalized tonic-clonic seizure"
+    class: generalized
+    drugs:
+      lamotrigine:   {status: first_line, source: NG217, rec: "5.1.1"}
+      valproate:     {status: first_line, source: NG217, rec: "5.1.1 (Box 2 restrictions apply)"}
+      carbamazepine: {status: not_listed, source: NG217, rec: "not a GTC option; 5.1.4: may worsen absence/myoclonic seizures if also present"}
+      pregabalin:    {status: not_listed, source: NG217, rec: "not a GTC option; 5.1.4: may worsen absence/myoclonic seizures if also present"}
+      cenobamate:    {status: not_indicated, source: XCOPRI, rec: "licensed for partial-onset seizures only"}
+      levetiracetam: {status: first_line, source: NG217, rec: "5.1.1"}
+      phenytoin:     {status: not_listed, source: NG217, rec: "not a GTC option; 5.1.4: may worsen absence/myoclonic seizures if also present"}
+      lacosamide:    {status: later_line, source: NG217, rec: "5.1.3: second-line add-on"}
+    guideline_only: []
+
+  absence:
+    label: "Absence seizure"
+    class: generalized
+    drugs:
+      lamotrigine:   {status: later_line, source: NG217, rec: "5.3.2"}
+      valproate:     {status: later_line, source: NG217, rec: "5.3.2 (Box 2 restrictions apply)"}
+      carbamazepine: {status: avoid, source: NG217, rec: "5.3.3: may exacerbate absence seizures"}
+      pregabalin:    {status: avoid, source: NG217, rec: "5.3.3: may exacerbate absence seizures"}
+      levetiracetam: {status: later_line, source: NG217, rec: "5.3.2"}
+      phenytoin:     {status: avoid, source: NG217, rec: "5.3.3: may exacerbate absence seizures"}
+      cenobamate:    {status: not_indicated, source: XCOPRI, rec: "licensed for partial-onset seizures only"}
+      lacosamide:    {status: not_listed, source: NG217, rec: "not in 5.3.1-5.3.2; not in the 5.3.3 exacerbation list either"}
+    guideline_only:
+      - {drug: ethosuximide, status: first_line, rec: "NG217 5.3.1"}
+
+  myoclonic:
+    label: "Myoclonic seizure"
+    class: generalized
+    drugs:
+      valproate:     {status: first_line, source: NG217, rec: "5.4.2: a choice of levetiracetam or sodium valproate (MHRA Box 2 safety measures apply)"}
+      lamotrigine:   {status: later_line, source: NG217, rec: "5.4.3 option; 5.4.4: can occasionally worsen myoclonic seizures"}
+      carbamazepine: {status: avoid, source: NG217, rec: "5.1.4: may exacerbate myoclonic seizures"}
+      pregabalin:    {status: avoid, source: NG217, rec: "5.1.4: may exacerbate myoclonic seizures"}
+      lacosamide:    {status: not_listed, source: NG217, rec: "not among the 5.4.2 or 5.4.3 options"}
+      cenobamate:    {status: not_indicated, source: XCOPRI, rec: "licensed for partial-onset seizures only"}
+      phenytoin:     {status: avoid, source: NG217, rec: "5.1.4: may exacerbate myoclonic seizures"}
+      levetiracetam: {status: first_line, source: NG217, rec: "5.4.2: a choice of levetiracetam or sodium valproate. NOTE: case reports describe paradoxical aggravation of myoclonus in juvenile myoclonic epilepsy (Liu 2012; Babtain 2012, via Wright 2013) - the guideline still lists it first-line, but watch for worsening"}
+    guideline_only: []
+
+  tonic: &tonic
+    label: "Tonic seizure"
+    class: generalized
+    drugs:
+      lamotrigine:   {status: first_line, source: NG217, rec: "5.5.2"}
+      valproate:     {status: first_line, source: NG217, rec: "5.5.2 (Box 2 restrictions apply)"}
+      carbamazepine: {status: avoid, source: NG217, rec: "5.5.6: may exacerbate tonic or atonic seizures"}
+      pregabalin:    {status: avoid, source: NG217, rec: "5.5.6: may exacerbate tonic or atonic seizures"}
+      levetiracetam: {status: not_listed, source: NG217, rec: "not among the 5.5.2 options (lamotrigine or sodium valproate)"}
+      phenytoin:     {status: not_listed, source: NG217, rec: "not among the 5.5.2 options; 5.5.6 does not list it either"}
+      cenobamate:    {status: not_indicated, source: XCOPRI, rec: "licensed for partial-onset seizures only"}
+      lacosamide:    {status: not_listed, source: NG217, rec: "not among the 5.5.2 or 5.5.3 options; 5.5.6 does not list it either"}
+    guideline_only: []
+  atonic:
+    <<: *tonic
+    label: "Atonic seizure"
+
+  unknown:
+    label: "Unknown whether focal or generalized"
+    class: unknown
+    drugs: {}
+    guideline_only: []
+  unclassified:
+    label: "Unclassified"
+    class: unclassified
+    drugs: {}
+    guideline_only: []
+
+# Patient modifier (NICE NG217 Box 2, sodium valproate)
+valproate_restriction:
+  rule: "Do not start sodium valproate for the first time in people (male or female) younger than 55 unless two specialists independently agree and document that there is no other effective, tolerated treatment, or that reproductive risks do not apply. In women and girls of childbearing potential, use only if other options failed and the Pregnancy Prevention Programme is in place."
+  source: NG217
+  applies_if: "age < 55 or able to have children"

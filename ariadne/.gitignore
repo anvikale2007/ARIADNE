@@ -1,0 +1,26 @@
+# ---------------------------------------------------------------- third-party data
+# NEVER commit these. They are other people's released datasets, each under its own
+# terms, and some are patient data. The code downloads or reads them locally; see
+# data/README.md for where to get each one.
+data/
+connectomes/*/weights.csv
+connectomes/*/*.nii.gz
+*.edf
+*.edf.seizures
+
+# ---------------------------------------------------------------- large or generated
+*.zip
+results/figures/*.png
+results/*.png
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+venv/
+.venv/
+env/
+
+# ---------------------------------------------------------------- local working files
+*.partial.json
+nohup.out
+*.log
